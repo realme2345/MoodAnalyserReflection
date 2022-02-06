@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace MoodAnalyserReflection
 {
     public class MoodAnalyzerExcep:Exception
-    {
+    {/// <summary>
+    /// Custom Exception Handling
+    /// </summary>
         public ExceptionType type;
         public enum ExceptionType //declaring the Exception
         {

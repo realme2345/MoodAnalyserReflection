@@ -4,7 +4,7 @@ using MoodAnalyserReflection;
 
 namespace MoodAnalyzerReflectionProblem
 {/// <summary>
-/// Mood Analyser
+/// Mood Analyser Test Case
 /// </summary>
     [TestClass]
     public class TestingAnalyzer

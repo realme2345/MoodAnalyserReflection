@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyserReflection
 {/// <summary>
-/// Reflection
+/// Reflection method 
 /// </summary>
     public class MoodAnalyseractory
     {
