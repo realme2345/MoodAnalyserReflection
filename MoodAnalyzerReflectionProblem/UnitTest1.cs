@@ -33,7 +33,20 @@ namespace MoodAnalyzerReflectionProblem
                 Assert.AreEqual(expected, ex.Message);
             }
         }
-
+        [TestMethod]
+        public void GivenImproperConstructerToThrowCustomException() //this method for to catch the custom reflection
+                                                               //if the constructer  name was different
+        {
+            string expected = "Constructer is not found";
+            try
+            {
+                object moodAnalyseObject = MoodAnalyseractory.CreateMoodAnalyse("MoodAnalyserReflection.MoodAnalyser", "MoodAnaly");
+            }
+            catch (MoodAnalyzerExcep ex)
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
     }
 }
     
