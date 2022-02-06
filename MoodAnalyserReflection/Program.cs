@@ -11,6 +11,7 @@ namespace MoodAnalyserReflection
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the Mood Analyser Reflection");
+            MoodAnalyseractory.CreateMoodAnalyse("MoodAnalyserReflection.MoodAnalyser","MoodAnalyser");
         }
     }
 }
