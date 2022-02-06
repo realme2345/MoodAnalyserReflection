@@ -11,7 +11,7 @@ namespace MoodAnalyserReflection
         public string message;
         public MoodAnalyser() //Creating a constructer 
         {
-            string message = "string>null";
+            string message = "string null";
             this.message = message;
         }
         public string AnalyseMood(string message)//this mothod is used for to analyse mood of user by using Exception

@@ -24,7 +24,7 @@ namespace MoodAnalyserReflection
                     Type moodAnalyseType=executing.GetType(className);
                     return Activator.CreateInstance(moodAnalyseType);
                 }
-                catch (ArgumentNullException)
+                catch (ArgumentNullException ex)
                 {
                     throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.NO_SUCH_CLASS, "Class not found");    
                 }
