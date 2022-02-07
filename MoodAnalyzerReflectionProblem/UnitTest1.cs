@@ -9,7 +9,7 @@ namespace MoodAnalyzerReflectionProblem
     [TestClass]
     public class TestingAnalyzer
     { /// <summary>
-      /// Use Reflection to Create Mood Analyser with parameterised constructer  constructer
+      ///Use Reflection to Create Mood Analyser with parameterised constructer  constructer
       /// </summary>
         [TestMethod]
         public void GiveMoodAnalyseClassNameShouldReturnMoodAnalyseObject()
