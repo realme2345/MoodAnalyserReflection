@@ -7,30 +7,24 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MoodAnalyserReflection
-{/// <summary>
-/// Reflection method 
-/// </summary>
+{ /// <summary>
+  /// Reflection method 
+  /// </summary>
     public class MoodAnalyseractory // check the reflection with parameterised constructer
     {
-        public static object CreateMoodAnalyse(string className,string constructerName,string message)
+        public static string CreateMoodAnalyse(string message,string methodName)
         {
-            Type type = typeof(MoodAnalyser);
-            if (type.Name.Equals(className)||type.FullName.Equals(className))
+            try
             {
-                if(type.Name.Equals(constructerName))
-                {
-                    ConstructorInfo ctor = type.GetConstructor(new[] { typeof(string) });
-                    object instance= ctor.Invoke(new object[] { message });
-                    return instance;
-                }
-                else
-                {
-                    throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.NO_SUCH_METHOD, "Constructer is not found");
-                }
+                Type type = Type.GetType("MoodAnalyserReflection.MoodAnalyser");
+                object moodAnalyserObject = MoodAnalyseractory.CreateMoodAnalyse("MoodAnalyserReflection.MoodAnalyser","MoodAnalyser");
+                MethodInfo method = type.GetMethod(methodName);
+                object mood = method.Invoke(moodAnalyserObject, null);
+                return mood.ToString();
             }
-            else
+            catch(NullReferenceException)   
             {
-                throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.NO_SUCH_CLASS, "Class not found");
+                throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.NO_SUCH_METHOD, "Method is not found");
 
             }
         }
