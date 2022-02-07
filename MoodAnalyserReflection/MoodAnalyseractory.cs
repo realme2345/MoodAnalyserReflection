@@ -25,7 +25,6 @@ namespace MoodAnalyserReflection
             catch(NullReferenceException)   
             {
                 throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.NO_SUCH_METHOD, "Method is not found");
-
             }
         }
     }
