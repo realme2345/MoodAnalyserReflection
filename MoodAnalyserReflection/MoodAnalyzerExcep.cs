@@ -8,7 +8,7 @@ namespace MoodAnalyserReflection
 {
     public class MoodAnalyzerExcep:Exception
     {/// <summary>
-    /// Custom Exception
+    /// Custom Exception 
     /// </summary>
         public ExceptionType type;
         public enum ExceptionType //declaring the Exception
