@@ -9,14 +9,12 @@ namespace MoodAnalyserReflection
     public class MoodAnalyser
     {
         public string message;
-        public MoodAnalyser() //Creating a constructer 
+        public MoodAnalyser(string message) //Creating a constructer 
         {
-            string message = "string null";
             this.message = message;
         }
-        public string AnalyseMood(string message) //this mothod is used for to analyse mood of user by using Exception
+        public string AnalyseMood() //this mothod is used for to analyse mood of user by using Exception
         {
-            this.message = message;
             try
             {
                 if (message.ToLower().Contains("happy"))

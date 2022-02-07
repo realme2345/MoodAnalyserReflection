@@ -11,7 +11,7 @@ namespace MoodAnalyserReflection
     /// Custom Exception 
     /// </summary>
         public ExceptionType type;
-        public enum ExceptionType //declaring the Exception
+        public enum ExceptionType // declaring the Custom Exception
         {
             NULL_EXCEPTION,
             EMPTY_EXCEPTION,

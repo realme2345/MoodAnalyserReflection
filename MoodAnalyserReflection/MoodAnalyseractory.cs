@@ -10,28 +10,28 @@ namespace MoodAnalyserReflection
 {/// <summary>
 /// Reflection method 
 /// </summary>
-    public class MoodAnalyseractory
+    public class MoodAnalyseractory //to check the reflection with parameterised constructer
     {
-        public static object CreateMoodAnalyse(string className,string constructerName)
+        public static object CreateMoodAnalyse(string className,string constructerName,string message)
         {
-            string pattern = @"."+constructerName+"$";
-            Match result = Regex.Match(className, pattern);
-            if (result.Success)
+            Type type = typeof(MoodAnalyser);
+            if (type.Name.Equals(className)||type.FullName.Equals(className))
             {
-                try
+                if(type.Name.Equals(constructerName))
                 {
-                    Assembly executing = Assembly.GetExecutingAssembly();
-                    Type moodAnalyseType=executing.GetType(className);
-                    return Activator.CreateInstance(moodAnalyseType);
+                    ConstructorInfo ctor = type.GetConstructor(new[] { typeof(string) });
+                    object instance= ctor.Invoke(new object[] { message });
+                    return instance;
                 }
-                catch (ArgumentNullException)
+                else
                 {
-                    throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.NO_SUCH_CLASS, "Class not found");    
+                    throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.NO_SUCH_METHOD, "Constructer is not found");
                 }
             }
             else
             {
-                throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.NO_SUCH_METHOD, "Constructer is not found");
+                throw new MoodAnalyzerExcep(MoodAnalyzerExcep.ExceptionType.NO_SUCH_CLASS, "Class not found");
+
             }
         }
     }
