@@ -20,6 +20,20 @@ namespace MoodAnalyzerReflectionProblem
             object obj = MoodAnalyseractory.CreateMoodAnalyse("MoodAnalyserReflection.MoodAnalyser", "MoodAnalyser","happy");
             exepected.Equals(obj);
         }
+        [TestMethod]
+        public void GivenImproperClassToThrowCustomException() //this method for to catch the custom reflection
+                                                               //if the class name was different
+        {
+            string expected = "Class not found";
+            try
+            {
+                object moodAnalyseObject = MoodAnalyseractory.CreateMoodAnalyse("MoodAnalyserReflection.MoodAnalys", "MoodAnalyser", "happy");
+            }
+            catch (MoodAnalyzerExcep ex)
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
     }
 }
     

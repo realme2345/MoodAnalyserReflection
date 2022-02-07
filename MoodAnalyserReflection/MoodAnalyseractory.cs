@@ -10,7 +10,7 @@ namespace MoodAnalyserReflection
 {/// <summary>
 /// Reflection method 
 /// </summary>
-    public class MoodAnalyseractory // check the reflection with parameterised constructer
+    public class MoodAnalyseractory //check the reflection with parameterised constructer
     {
         public static object CreateMoodAnalyse(string className,string constructerName,string message)
         {

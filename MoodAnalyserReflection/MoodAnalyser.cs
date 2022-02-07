@@ -9,7 +9,7 @@ namespace MoodAnalyserReflection
     public class MoodAnalyser
     {
         public string message;
-        public MoodAnalyser(string message) //Creating a constructer 
+        public MoodAnalyser(string message) // Creating a constructer 
         {
             this.message = message;
         }
